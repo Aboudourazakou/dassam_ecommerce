@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/>
+<defs>
+<style>
+.cls{
+    fill:#fff;
+}
+</style>
+</defs>
+<path d="M17.85 5H6.15A4.13 4.13 0 0 0 2 9.1v5.8C2 17.15 3.86 19 6.15 19h11.7c2.29 0 4.15-1.84 4.15-4.1V9.1C22 6.85 20.14 5 17.85 5zm-2.81 7.28l-5.47 2.58a.22.22 0 0 1-.32-.2V9.35a.22.22 0 0 1 .32-.19l5.47 2.74a.22.22 0 0 1 0 .4z" class="cls"></path></svg>
