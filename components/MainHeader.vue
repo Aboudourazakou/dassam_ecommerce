@@ -7,7 +7,7 @@
       <!--menu container-->
       <v-container class="d-flex mx-auto">
         <!--Logo Dunia-->
-        <div class="logo-wrapper d-flex mr-4" style="width:222px;padding-left:0px;">
+        <div class="logo-wrapper d-flex">
           <div class="logo">
             <v-img src="/dunia.jpeg" />
           </div>
@@ -32,7 +32,7 @@
         <!--End search button-->
 
         <!--logged in user icon and indications-->
-        <div class="user d-flex ml-3" style="align-items:center; text-transform: capitalize;">
+        <div class="user d-flex ml-3">
           <v-img src="/shop/user.svg"></v-img>
           <h3 class="username d-inline-block text-truncate">Bonjour, Aboudourazakou</h3>
           <v-img height="5px" src="/shop/dropdown.svg"></v-img>
@@ -157,6 +157,13 @@ input:focus {
   width: 180px;
 }
 
+.logo-wrapper {
+  width: 222px;
+  padding-left: 0px;
+  margin-left: -20px;
+  margin-right: 25px;
+}
+
 /*m*/
 /*n*/
 /*o*/
@@ -176,6 +183,10 @@ input:focus {
 }
 /*t*/
 /*u*/
+.user{
+  align-items:center;
+   text-transform: capitalize;
+}
 .username {
   background: rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box
     border-box;
