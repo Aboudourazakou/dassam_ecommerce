@@ -5,7 +5,7 @@
   <v-container fluid class="header-container">
     <v-card class="header-card" height="72" flat>
       <!--menu container-->
-      <v-container class="d-flex mx-auto">
+      <v-container class="d-flex mx-auto" style="justify-content:center">
         <!--Logo Dunia-->
         <div class="logo-wrapper d-flex">
           <div class="logo">
@@ -183,9 +183,9 @@ input:focus {
 }
 /*t*/
 /*u*/
-.user{
-  align-items:center;
-   text-transform: capitalize;
+.user {
+  align-items: center;
+  text-transform: capitalize;
 }
 .username {
   background: rgba(0, 0, 0, 0) none repeat scroll 0% 0% / auto padding-box

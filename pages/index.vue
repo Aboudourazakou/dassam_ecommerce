@@ -2,29 +2,24 @@
   <v-app>
     <MainHeader />
     <v-main>
-
-
       <!--Banner container -->
       <v-container class="banner d-flex mx-auto mt-3">
-
         <!--Menu on big devices not include mobile containing categories-->
-           <HomeCategories  :items="items"/>
-        <!--End menu-->
+        <HomeCategories :items="items" />
 
-       <!--Caroussel-->
-       <HomeCaroussel/>
-       <!--End Caroussel-->
+        <!--Caroussel-->
+        <HomeCaroussel />
 
         <!--Right column-->
-        <HomeBannerRightColumn :infos="infos"/>
-        <!--End Right column-->
-
+        <HomeBannerRightColumn :infos="infos" />
       </v-container>
       <!--End banner container-->
 
-       <!--Container for differents services -->
-       <HomeServices :services="services"/>
-       <!--End container for differents services-->
+      <!--Container for differents services -->
+      <HomeServices :services="services" />
+
+      <!--Most sold products-->
+       <HomeProductsMostSold :products="products1"/>
     </v-main>
   </v-app>
 </template>
@@ -34,9 +29,9 @@ export default {
   data() {
     return {
       affiche: 1,
-         services: [
+      services: [
         {
-          title: "Nos marques",
+          title: "Nos Marques ",
           image: "marques.png"
         },
         {
@@ -133,6 +128,92 @@ export default {
           title: "Autres catégories",
           to: "/traducteurs"
         }
+      ],
+      products1: [
+        {
+          image: "101.jpg",
+          priceN: "456 000 FCFA",
+          priceR: "1000.0000 FCFA",
+          name: "Appareil Connecte a Bluetooth"
+        },
+        {
+          image: "102.jpg",
+          priceN: "10 000 FCFA",
+          priceR: "100.0000 FCFA",
+          name: "Appareil mobile "
+        },
+        {
+          image: "103.jpg",
+          priceN: "30 000 FCFA",
+          priceR: "40.0000 FCFA",
+          name: "Televion togolaise "
+        },
+        {
+          image: "104.jpg",
+          priceN: "60 000 FCFA",
+          priceR: "320.0000 FCFA",
+          name: "Montr moderne a Banger "
+        },
+        {
+          image: "105.jpg",
+          priceN: "596 000 FCFA",
+          priceR: "2309.0000 FCFA",
+          name: "Vetement de sport "
+        },
+        {
+          image: "106.jpg",
+          priceN: "496 000 FCFA",
+          priceR: "309.0000 FCFA",
+          name: "Chaussures de sport "
+        },
+        {
+          image: "107.jpg",
+          priceN: "496 000 FCFA",
+          priceR: "309.0000 FCFA",
+          name: "Chaussures  "
+        },
+        {
+          image: "108.jpg",
+          priceN: "496 000 FCFA",
+          priceR: "309.0000 FCFA",
+          name: "Chaussures  "
+        },
+        {
+          image: "109.jpg",
+          priceN: "496 000 FCFA",
+          priceR: "309.0000 FCFA",
+          name: "Chaussures  "
+        },
+        {
+          image: "110.jpg",
+          priceN: "496 000 FCFA",
+          priceR: "309.0000 FCFA",
+          name: "Chaussures  "
+        },
+        {
+          image: "111.jpg",
+          priceN: "30 000 FCFA",
+          priceR: "40.0000 FCFA",
+          name: "Televion togolaise "
+        },
+        {
+          image: "101.jpg",
+          priceN: "60 000 FCFA",
+          priceR: "320.0000 FCFA",
+          name: "Montr moderne a Banger "
+        },
+        {
+          image: "107.jpg",
+          priceN: "596 000 FCFA",
+          priceR: "2309.0000 FCFA",
+          name: "Vetement de sport "
+        },
+        {
+          image: "114.jpg",
+          priceN: "596 000 FCFA",
+          priceR: "2309.0000 FCFA",
+          name: "Vetement de sport "
+        }
       ]
     };
   },
@@ -157,10 +238,10 @@ export default {
 
 
 <style scoped>
-
 .banner {
   margin-top: 80px;
   height: 392px;
+  justify-content: center;
 }
 
 .v-application {

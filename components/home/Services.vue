@@ -3,9 +3,9 @@
     <v-card
       v-for="service in services"
       :key="service.title"
-      class="card d-flex pl-2 ml-0 mr-5"
+      class="card d-flex pl-2 mr-5"
       height="60"
-      width="280"
+      width="275"
     >
       <v-avatar size="40" class="mr-3">
         <v-img :src="'/' + service.image"></v-img>
@@ -26,14 +26,15 @@ export default {
 <style scoped>
 /*c*/
 .card {
-  margin-left: auto;
-  margin-right: auto;
   align-items: center;
   background: #ffffff;
 }
 .container {
   height: 72px;
-  padding-right: 0px;
+  justify-content: center;
+}
+.container > .card:last-child {
+  margin-right: 0px !important;
 }
 
 /*i*/
