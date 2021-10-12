@@ -1,0 +1,53 @@
+   <v-card
+          flat
+          class=" products-first scroll-right pt-0 d-flex pl-3 text-center"
+          height="auto"
+          color="white"
+          width="1160"
+
+        >
+          <v-card
+
+            flat
+            class="wrapped-item-card d-block "
+            height="263"
+            width="193"
+            v-for="product in products"
+
+          >
+            <v-card
+
+              style="position:relative;"
+              tile
+              flat
+              class="image-card "
+              height="187"
+              width="187"
+              color="white"
+            >
+              <v-card
+                rounded
+
+                flat
+                width="40"
+                height="24"
+                color="white"
+                style="position:absolute;right:2px;top:2px;z-index:1;color:#f68b1e"
+                >-20%</v-card
+              >
+              <v-img :src="'/' + product.image"></v-img>
+            </v-card>
+
+            <p
+
+              style="width:inherit;color:black"
+              class="itemname d-inline-block text-truncate pb-0 mb-0"
+            >
+              {{ product.name }}
+            </p>
+            <div class="price d-block pt-0 mt-0" style="color:black ">
+              <h3>{{ product.priceN }}</h3>
+              <h5 class="text-decoration-line-through ">{{ product.priceR }}</h5>
+            </div>
+          </v-card>
+        </v-card>

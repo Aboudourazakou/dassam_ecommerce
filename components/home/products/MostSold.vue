@@ -46,63 +46,24 @@
     </v-fab-transition>
         </div>
        <!--End Scroll arrow left -->
-        <v-card flat class="header1 d-flex pl-2 pb-0  white pt-3" height="48" width="1160" >
-          <h2>
-            Les plus demandés
-          </h2>
-        </v-card>
 
-        <v-card
-          flat
-          class=" products-first scroll-right pt-0 d-flex pl-3 text-center"
-          height="auto"
-          color="white"
-          width="1160"
 
-        >
-          <v-card
-            flat
-            class="wrapped-item-card d-block "
-            height="263"
-            width="193"
-            v-for="product in products"
-            color="white"
-          >
-            <v-card
-              style="position:relative"
-              tile
-              flat
-              class="image-card "
-              height="187"
-              width="187"
-              color="white"
-            >
-              <v-card
-                rounded
 
-                flat
-                width="40"
-                height="24"
-                color="white"
-                style="position:absolute;right:2px;top:2px;z-index:1;color:#f68b1e"
-                >-20%</v-card
-              >
-              <v-img :src="'/' + product.image"></v-img>
-            </v-card>
+      <!--title-->
+       <v-container class="title d-flex" style="height:60px;width:1160px;justify-content:left;align-items:center;background:white">
+         <h5 style="color:black">Les  plus demandes</h5>
+       </v-container>
+      <!--end title-->
+       <v-container class="products-container white d-flex justify-space-around pr-0 pl-3 pb-4 pr-3 mt-0 pt-0" style="height:280px;width:1160px">
 
-            <p
+         <v-div class="product-wrapper " v-for="i in 6">
 
-              style="width:inherit;color:black"
-              class="itemname d-inline-block text-truncate pb-0 mb-0"
-            >
-              {{ product.name }}
-            </p>
-            <div class="price d-block pt-0 mt-0" style="color:black ">
-              <h3>{{ product.priceN }}</h3>
-              <h5 class="text-decoration-line-through ">{{ product.priceR }}</h5>
-            </div>
-          </v-card>
-        </v-card>
+             <v-div style="width:100%;height:120px;background:red">
+                <v-img src="/101.jpg"></v-img>
+             </v-div>
+
+         </v-div>
+       </v-container>
       </v-container>
       </v-container>
       <!--End les plus demandes-->
@@ -144,9 +105,9 @@ export default {
       var $scrollLeft = $(".scroll-right ").scrollLeft();
 
       //Check if scrolling is finished
-      if ( $scrollLeft -700 <500) {
+      if ($scrollLeft - 700 < 500) {
         $(".scroll-right ").animate({ scrollLeft: "-=700" }, 800);
-
+        console.log($scrollLeft);
         document.getElementById("left-arrow").style.display = "none";
       }
     }
@@ -155,6 +116,14 @@ export default {
 </script>
 
 <style scoped>
+/*a*/
+.arrow-right {
+  display: none;
+}
+.arrow-left {
+  display: none;
+}
+
 .container {
   margin: auto;
   padding-right: 0px;
@@ -165,6 +134,21 @@ export default {
 .card-overflow {
   -ms-overflow-style: none;
   scrollbar-width: none; /* Firefox */
+}
+/*d*/
+.disable-scrollLeft {
+  display: none;
+}
+.disable-Right {
+  display: none;
+}
+
+/*e*/
+.enable-scrollLeft {
+  display: block;
+}
+.enable-scrollRight {
+  display: block;
 }
 
 /*i*/
@@ -181,6 +165,7 @@ export default {
   line-height: normal;
   height: 21px;
   color: #282828;
+  border-bottom-left-radius: 0px !important;
 }
 
 /*p*/
@@ -196,6 +181,27 @@ export default {
   height: 15px;
   font-weight: 400;
 }
+.products-container {
+  background: #ffffff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+.products-container .product-wrapper {
+  width: 16%;
+}
+
+.product-wrapper {
+  border-radius: 4px;
+  background: #fff;
+
+  padding: 14px 80px 18px 36px;
+  cursor: pointer;
+}
+
+.product-wrapper:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+}
 .products-first::-webkit-scrollbar {
   display: none;
 }
@@ -204,5 +210,15 @@ export default {
   overflow-x: scroll;
   -ms-overflow-style: none;
   scrollbar-width: none; /* Firefox */
+}
+
+/*t*/
+.title {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+/*w*/
+.wrapped-item-card {
+  display: none;
 }
 </style>
