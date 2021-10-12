@@ -136,6 +136,18 @@ export default {
           priceR: "1000.0000 FCFA",
           name: "Appareil Connecte a Bluetooth"
         },
+         {
+          image: "101.jpg",
+          priceN: "456 000 FCFA",
+          priceR: "1000.0000 FCFA",
+          name: "Appareil Connecte a Bluetooth"
+        },
+         {
+          image: "101.jpg",
+          priceN: "456 000 FCFA",
+          priceR: "1000.0000 FCFA",
+          name: "Appareil Connecte a Bluetooth"
+        },
         {
           image: "102.jpg",
           priceN: "10 000 FCFA",

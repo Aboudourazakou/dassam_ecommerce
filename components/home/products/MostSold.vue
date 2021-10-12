@@ -3,7 +3,49 @@
 
       <!--Les plus demandees-->
      <v-container class="d-flex" style="justify-content:center;">
-        <v-container class="container  pt-0 nomobile pl-0  mt-5"  style="width:auto">
+        <v-container class="container  pt-0 nomobile pl-0  mt-5"  style="width:auto;position:relative">
+
+       <!--Scrool arrow right-->
+            <div class="arrow-right" id="right-arrow" style="position:absolute;right:3px;bottom:50%;z-index:10;">
+               <v-fab-transition>
+      <v-btn
+      v-on:click="scrolright()"
+       style="background:#75757a"
+        fab
+        small
+        dark
+
+
+        class="v-btn--example  "
+      >
+    <v-avatar size="12">
+              <v-img src="/icons/arrow-right.svg"></v-img>
+              </v-avatar>
+      </v-btn>
+    </v-fab-transition>
+        </div>
+       <!--End Scroll arrow right -->
+
+         <!--Scrool arrow left-->
+            <div class="arrow-left" id="left-arrow" style="position:absolute;left:3px;bottom:50%;z-index:10;">
+               <v-fab-transition>
+      <v-btn
+      v-on:click="scrolleft()"
+       style="background:#75757a"
+        fab
+        small
+        dark
+
+
+        class="v-btn--example  "
+      >
+    <v-avatar size="12">
+              <v-img src="/icons/arrow-left.svg"></v-img>
+              </v-avatar>
+      </v-btn>
+    </v-fab-transition>
+        </div>
+       <!--End Scroll arrow left -->
         <v-card flat class="header1 d-flex pl-2 pb-0  white pt-3" height="48" width="1160" >
           <h2>
             Les plus demandés
@@ -12,10 +54,11 @@
 
         <v-card
           flat
-          class=" products-first pt-0 d-flex pl-3 text-center"
+          class=" products-first scroll-right pt-0 d-flex pl-3 text-center"
           height="auto"
           color="white"
           width="1160"
+
         >
           <v-card
             flat
@@ -66,9 +109,47 @@
 </template>
 
 <script>
+import $ from "jquery";
+
 export default {
   props: {
     products: Array
+  },
+  data() {
+    return {
+      scrolValue: 500,
+      leftScrolling: false,
+      rightScrolling: false
+    };
+  },
+
+  methods: {
+    scrolright() {
+      console.log("Salut");
+      $(".scroll-right ").animate({ scrollLeft: "+=700" }, 800);
+
+      var $width = $(".scroll-right ").outerWidth();
+      var $scrollWidth = $(".scroll-right ")[0].scrollWidth;
+      var $scrollLeft = $(".scroll-right ").scrollLeft();
+
+      //Check if scrolling is finished
+      if ($width + $scrollLeft + 700 > $scrollWidth) {
+        $(".scroll-right ").animate({ scrollLeft: "+=700" }, 800);
+
+        document.getElementById("right-arrow").style.display = "none";
+      }
+    },
+    scrolleft() {
+      $(".scroll-right ").animate({ scrollLeft: "-=700" }, 800);
+      var $scrollLeft = $(".scroll-right ").scrollLeft();
+
+      //Check if scrolling is finished
+      if ( $scrollLeft -700 <500) {
+        $(".scroll-right ").animate({ scrollLeft: "-=700" }, 800);
+
+        document.getElementById("left-arrow").style.display = "none";
+      }
+    }
   }
 };
 </script>
@@ -103,16 +184,15 @@ export default {
 }
 
 /*p*/
-.price h3  {
+.price h3 {
   font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Helvetica Neue", Arial, sans-serif;
   color: #282828;
   font-weight: 500;
   font-size: 16px;
-
 }
-.price h5{
-  color:  #75757a;
+.price h5 {
+  color: #75757a;
   height: 15px;
   font-weight: 400;
 }
