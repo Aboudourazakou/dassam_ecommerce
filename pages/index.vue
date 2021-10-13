@@ -20,6 +20,7 @@
 
       <!--Most sold products-->
        <HomeProductsMostSold :products="products1"/>
+     
     </v-main>
   </v-app>
 </template>

@@ -54,15 +54,26 @@
          <h5 style="color:black">Les  plus demandes</h5>
        </v-container>
       <!--end title-->
-       <v-container class="products-container white d-flex justify-space-around pr-0 pl-3 pb-4 pr-3 mt-0 pt-0" style="height:280px;width:1160px">
+       <v-container class="products-container white d-flex align-items-space-around pr-0 pl-3 pb-4 pr-3 mt-0 pt-0" style="height:270px;width:1160px">
 
-         <v-div class="product-wrapper " v-for="i in 6">
+         <div class="product-wrapper mr-0 ml-0 pr-0 pl-0 pt-0 mb-0 pb-0" style="display:flex;flex-wrap:wrap;" v-for="i in 6">
 
-             <v-div style="width:100%;height:120px;background:red">
-                <v-img src="/101.jpg"></v-img>
-             </v-div>
+              <div style="border-radius:5px; width:100%;height:187px;important">
+               <v-img
+                lazy-src="https://picsum.photos/id/11/10/6"
+               :src="'/10'+i+'.jpg'" loading="lazy"></v-img>
+             </div>
+             <div class="pr-3 pl-3 " style="height:70px;width:100%;">
+               <p style="width:inherit;color:black"
+                class="itemname d-inline-block text-truncate pb-0 mb-0">
+                Cafeine thailandais au gaz ou bien je vais</p>
+                   <h5 class="price d-inline-block text-truncate" >160.00 Dhs</h5>
+                   <h4 class=" canceled-price text-truncate text-decoration-line-through ">88.00 Dhs</h4>
+             </div>
 
-         </v-div>
+
+
+         </div>
        </v-container>
       </v-container>
       </v-container>
@@ -153,10 +164,13 @@ export default {
 
 /*i*/
 .itemname {
+  color: #282828;
   font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Helvetica Neue", Arial, sans-serif;
-  font-size: 12px;
-  color: #282828;
+  font-size: 14px;
+  font-weight: 400;
+  height: 16px;
+  line-height: 14px;
 }
 /*h*/
 .header1 > h2 {
@@ -169,17 +183,22 @@ export default {
 }
 
 /*p*/
-.price h3 {
+
+.price {
   font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Helvetica Neue", Arial, sans-serif;
   color: #282828;
-  font-weight: 500;
   font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+  width:inherit;
 }
-.price h5 {
+
+.canceled-price {
   color: #75757a;
-  height: 15px;
-  font-weight: 400;
+  font-weight: 300;
+  font-size: 12px;
+  width:inherit;
 }
 .products-container {
   background: #ffffff;
@@ -193,6 +212,7 @@ export default {
 .product-wrapper {
   border-radius: 4px;
   background: #fff;
+  flex-wrap: nowrap;
 
   padding: 14px 80px 18px 36px;
   cursor: pointer;
@@ -216,6 +236,12 @@ export default {
 .title {
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+}
+.title h5 {
+  color: #282828;
+  font-size: 20px;
+  font-weight: 500;
+  height: 27px;
 }
 /*w*/
 .wrapped-item-card {
