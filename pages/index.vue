@@ -15,6 +15,7 @@
       </v-container>
       <!--End banner container-->
 
+
       <!--Container for differents services -->
       <HomeServices :services="services" />
 
@@ -28,6 +29,10 @@
         color="#FF550C"
         titleColor="#ffffff"
       />
+
+      <HomeProductsCollections :collections="collections"/>
+      <HomeFooter/>
+
     </v-main>
   </v-app>
 </template>
@@ -37,6 +42,21 @@ export default {
   data() {
     return {
       affiche: 1,
+
+      collections: [
+        { image: "tel.png", title: "Smartphone" },
+        { image: "television.png", title: "Television" },
+        { image: "montrefemme.png", title: "Montre femme" },
+        { image: "montre.png", title: "Montre homme" },
+        { image: "robe.png", title: "Robe femme" },
+        { image: "sacamain.png", title: "Sac a main" },
+        { image: "smartwatch.png", title: "Smart watch" },
+        { image: "vhomme.png", title: "Veste Homme" },
+        { image: "tablette.png", title: "Tablette" },
+        { image: "informatique.png", title: "Informatique" },
+        { image: "coque.png", title: "Coque" },
+        { image: "chaussures.png", title: "Chaussure homme" }
+      ],
       services: [
         {
           title: "Nos Marques ",

@@ -2,8 +2,8 @@
 <template>
 
       <!--Les plus demandees-->
-     <v-container class="d-flex mb-0 pb-0" style="justify-content:center;">
-        <v-container class="container  pt-0 nomobile pl-0  mt-4 mb-0"  style="width:auto;position:relative">
+     <v-container class="d-flex mb-0 pb-0 mx-auto">
+        <v-container class="container   pt-0 nomobile pl-0  mt-3 mb-0"  style="width:auto;position:relative">
 
 
          <!--Scrool arrow right-->
@@ -175,7 +175,6 @@ export default {
 }
 
 .container {
-  margin: auto;
   padding-right: 0px;
   justify-content: center;
 }
