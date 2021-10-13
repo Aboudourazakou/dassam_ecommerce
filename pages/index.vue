@@ -19,8 +19,15 @@
       <HomeServices :services="services" />
 
       <!--Most sold products-->
-       <HomeProductsMostSold :products="products1"/>
-     
+      <HomeProductsMostSold :products="products1" />
+
+      <!--Second product list -->
+      <HomeProductsProductList
+        :products="products2"
+        title="Dernieres tendances sur Jumia"
+        color="#FF550C"
+        titleColor="#ffffff"
+      />
     </v-main>
   </v-app>
 </template>
@@ -137,13 +144,13 @@ export default {
           priceR: "1000.0000 FCFA",
           name: "Appareil Connecte a Bluetooth"
         },
-         {
+        {
           image: "101.jpg",
           priceN: "456 000 FCFA",
           priceR: "1000.0000 FCFA",
           name: "Appareil Connecte a Bluetooth"
         },
-         {
+        {
           image: "101.jpg",
           priceN: "456 000 FCFA",
           priceR: "1000.0000 FCFA",
@@ -226,6 +233,44 @@ export default {
           priceN: "596 000 FCFA",
           priceR: "2309.0000 FCFA",
           name: "Vetement de sport "
+        }
+      ],
+      products2: [
+        {
+          image: "102.jpg",
+          priceN: "10 000 FCFA",
+          priceR: "100.0000 FCFA",
+          name: "Appareil mobile"
+        },
+        {
+          image: "103.jpg",
+          priceN: "30 000 FCFA",
+          priceR: "40.0000 FCFA",
+          name: "Televion togolaise "
+        },
+        {
+          image: "104.jpg",
+          priceN: "60 000 FCFA",
+          priceR: "320.0000 FCFA",
+          name: "Montr moderne a Banger "
+        },
+        {
+          image: "105.jpg",
+          priceN: "596 000 FCFA",
+          priceR: "2309.0000 FCFA",
+          name: "Vetement de sport "
+        },
+        {
+          image: "106.jpg",
+          priceN: "496 000 FCFA",
+          priceR: "309.0000 FCFA",
+          name: "Chaussures de sport "
+        },
+        {
+          image: "107.jpg",
+          priceN: "496 000 FCFA",
+          priceR: "309.0000 FCFA",
+          name: "Chaussures  "
         }
       ]
     };

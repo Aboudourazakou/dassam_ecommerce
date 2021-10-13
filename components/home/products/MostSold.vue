@@ -2,11 +2,12 @@
 <template>
 
       <!--Les plus demandees-->
-     <v-container class="d-flex" style="justify-content:center;">
-        <v-container class="container  pt-0 nomobile pl-0  mt-5"  style="width:auto;position:relative">
+     <v-container class="d-flex mb-0 pb-0" style="justify-content:center;">
+        <v-container class="container  pt-0 nomobile pl-0  mt-4 mb-0"  style="width:auto;position:relative">
 
-       <!--Scrool arrow right-->
-            <div class="arrow-right" id="right-arrow" style="position:absolute;right:3px;bottom:50%;z-index:10;">
+
+         <!--Scrool arrow right-->
+            <div  @mouseover="displayArrows()" class="arrow-right" id="right-arrow" style="position:absolute;right:3px;bottom:50%;z-index:10;">
                <v-fab-transition>
       <v-btn
       v-on:click="scrolright()"
@@ -27,7 +28,7 @@
        <!--End Scroll arrow right -->
 
          <!--Scrool arrow left-->
-            <div class="arrow-left" id="left-arrow" style="position:absolute;left:3px;bottom:50%;z-index:10;">
+            <div  @mouseover="displayArrows()"  class="arrow-left" id="left-arrow" style="position:absolute;left:3px;bottom:50%;z-index:10;">
                <v-fab-transition>
       <v-btn
       v-on:click="scrolleft()"
@@ -48,20 +49,31 @@
        <!--End Scroll arrow left -->
 
 
-
       <!--title-->
-       <v-container class="title d-flex" style="height:60px;width:1160px;justify-content:left;align-items:center;background:white">
-         <h5 style="color:black">Les  plus demandes</h5>
+       <v-container class="title d-flex" style="height:50px;width:1160px;justify-content:left;align-items:center;background:white">
+         <h5 style="color:black">Les  plus demandés</h5>
        </v-container>
       <!--end title-->
-       <v-container class="products-container white d-flex align-items-space-around pr-0 pl-3 pb-4 pr-3 mt-0 pt-0" style="height:270px;width:1160px">
+       <v-container class="products-container  scroll-right white d-flex align-items-space-around pr-0 pl-3 pb-4 pr-0 mt-0 pt-0" style="height:270px;width:1160px;position:relative">
 
-         <div class="product-wrapper mr-0 ml-0 pr-0 pl-0 pt-0 mb-0 pb-0" style="display:flex;flex-wrap:wrap;" v-for="i in 6">
 
+         <div class="product-wrapper mr-0 ml-0 pr-0 pl-0 pt-0 mb-0 pb-0" style="display:flex;flex-wrap:wrap;position:relative" v-for="product in products"  @mouseover="displayArrows()" @mouseleave="disableArrows()">
+
+
+            <v-card
+                rounded
+
+                flat
+                width="40"
+                height="24"
+                color="white"
+                style="position:absolute;right:20px;top:20px;z-index:1;color:#f68b1e;background-color: #feefde; "
+                >-20%</v-card
+              >
               <div style="border-radius:5px; width:100%;height:187px;important">
                <v-img
-                lazy-src="https://picsum.photos/id/11/10/6"
-               :src="'/10'+i+'.jpg'" loading="lazy"></v-img>
+
+               :src="'/' + product.image" loading="lazy"></v-img>
              </div>
              <div class="pr-3 pl-3 " style="height:70px;width:100%;">
                <p style="width:inherit;color:black"
@@ -96,9 +108,34 @@ export default {
   },
 
   methods: {
+    disableArrows() {
+      document.getElementById("right-arrow").style.display = "none";
+      document.getElementById("left-arrow").style.display = "none";
+    },
+    displayArrows() {
+      var $width = $(".scroll-right ").outerWidth();
+      var $scrollWidth = $(".scroll-right ")[0].scrollWidth;
+      var $scrollLeft = $(".scroll-right ").scrollLeft();
+
+      //Check if scrolling is finished
+      if ($width + $scrollLeft < $scrollWidth) {
+        document.getElementById("right-arrow").style.display = "block";
+      } else {
+        document.getElementById("right-arrow").style.display = "none";
+      }
+
+      console.log($scrollLeft);
+      //Check if scrolling is finished
+      if ($scrollLeft <= 0) {
+        document.getElementById("left-arrow").style.display = "none";
+      } else {
+        document.getElementById("left-arrow").style.display = "block";
+      }
+    },
     scrolright() {
-      console.log("Salut");
       $(".scroll-right ").animate({ scrollLeft: "+=700" }, 800);
+      //Display left arrow
+      document.getElementById("left-arrow").style.display = "block";
 
       var $width = $(".scroll-right ").outerWidth();
       var $scrollWidth = $(".scroll-right ")[0].scrollWidth;
@@ -113,12 +150,14 @@ export default {
     },
     scrolleft() {
       $(".scroll-right ").animate({ scrollLeft: "-=700" }, 800);
-      var $scrollLeft = $(".scroll-right ").scrollLeft();
+      //Display right arrow
+      document.getElementById("right-arrow").style.display = "block";
 
+      var $scrollLeft = $(".scroll-right ").scrollLeft();
       //Check if scrolling is finished
       if ($scrollLeft - 700 < 500) {
         $(".scroll-right ").animate({ scrollLeft: "-=700" }, 800);
-        console.log($scrollLeft);
+
         document.getElementById("left-arrow").style.display = "none";
       }
     }
@@ -191,22 +230,25 @@ export default {
   font-size: 16px;
   font-weight: 500;
   line-height: 16px;
-  width:inherit;
+  width: inherit;
 }
 
 .canceled-price {
   color: #75757a;
   font-weight: 300;
   font-size: 12px;
-  width:inherit;
+  width: inherit;
 }
 .products-container {
   background: #ffffff;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
 }
 .products-container .product-wrapper {
-  width: 16%;
+  width: 16.5%;
 }
 
 .product-wrapper {
@@ -222,7 +264,7 @@ export default {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
 }
-.products-first::-webkit-scrollbar {
+.products-container::-webkit-scrollbar {
   display: none;
 }
 .products-first {
