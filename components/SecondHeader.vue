@@ -10,22 +10,17 @@
           <!--Categories--->
           <div
             @mouseover="displayCategories()"
-            @mouseleave="disableCategories()"
+               @mouseleave="disableCategories()"
             class="categories"
             id="categories"
-            style="position:absolute;bottom:-400px;padding-top:20px;margin-top:-20px"
+            style="position:absolute;bottom:-400px;padding-top:25px;margin-top:-30px;z-index:10"
           >
             <div class="list-categories" id="list-categories">
               <HomeCategories :items="items" />
             </div>
           </div>
           <!--End Categories -->
-          <div
-            class="brand"
-           
-            @mouseover="displayCategories()"
-            @mouseleave="disableCategories()"
-          >
+          <div class="brand" @mouseover="displayCategories()"   @mouseleave="disableCategories()">
             <v-img src="/icons/brand.svg"></v-img>
           </div>
           <div class="logo">
@@ -280,6 +275,7 @@ input:focus {
 /*j*/
 /*k*/
 /*l*/
+
 .logo {
   width: 180px;
 }
