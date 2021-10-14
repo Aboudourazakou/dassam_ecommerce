@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <MainHeader />
+    <HomeMainHeader />
     <v-main>
       <!--Banner container -->
       <v-container class="banner d-flex mx-auto mt-3">

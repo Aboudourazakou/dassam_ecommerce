@@ -1,34 +1,33 @@
 <template>
-    <v-card flat width="220" class="mr-3" color="red">
-          <v-list style="background:#ffffff">
-            <span v-for="item in items" :key="item.title" class="d-flex" style="padding-left:8px">
-              <v-list-item-content class="menu-item-content" :id="item.icon.split('.')[0]">
-                <v-list-item-title class="menu-item">
-                  <v-avatar size="16" class="mr-1">
-                    <v-img :src="'/iconsmenu/' + item.icon"></v-img>
-                  </v-avatar>
-                  {{ item.title }}
-                </v-list-item-title>
-              </v-list-item-content>
-            </span>
-          </v-list>
-        </v-card>
+  <v-card rounded flat width="220" color="white" class="cat mr-3" id="cat">
+    <v-list color="white" class="list">
+      <span v-for="item in items" :key="item.title" class="d-flex" style="padding-left:8px">
+        <v-list-item-content class="menu-item-content" :id="item.icon.split('.')[0]">
+          <v-list-item-title class="menu-item">
+            <v-avatar size="16" class="mr-1">
+              <v-img :src="'/iconsmenu/' + item.icon"></v-img>
+            </v-avatar>
+            {{ item.title }}
+          </v-list-item-title>
+        </v-list-item-content>
+      </span>
+    </v-list>
+  </v-card>
 </template>
 
 <script>
 export default {
-  props:{
-    items:Array
+  props: {
+    items: Array
   }
-}
+};
 </script>
 
 <style scoped>
- /*c*/
+/*c*/
 .card {
   position: relative;
 }
-
 
 /*i*/
 .icon {
@@ -38,7 +37,6 @@ export default {
   border-radius: 100%;
   color: #c7c7cd;
 }
-
 
 /*m*/
 .menu {
@@ -63,5 +61,4 @@ export default {
   font-size: 12px !important;
   color: #282828;
 }
-
 </style>
