@@ -53,7 +53,10 @@
     <!--End First select input -->
 
     <!--Second select input -->
-    <div class="select mt-2 mr-2 ml-3 d-flex" style="height:40px ;border-radius:5px;position:relative">
+    <div
+      class="select mt-2 mr-2 ml-3 d-flex"
+      style="height:40px ;border-radius:5px;position:relative"
+    >
       <div
         class="down-icon"
         style="position:absolute;height:16px;width:16px;right:20px;top:10%;z-index:0"
@@ -77,6 +80,20 @@
       </select>
     </div>
     <!--End select input -->
+
+    <!--shipment retour -->
+    <div class="house-delivery mt-3 ml-3 d-flex">
+      <div
+        class="icon-wrapper d-flex"
+        style="height:40px;width:40px;border:1px solid black;justify-content:center;align-items:center"
+      >
+        <div class="ico" style="height:25px;width:25px;">
+          <v-img src="/icons/car.svg"></v-img>
+        </div>
+       
+      </div>
+    </div>
+    <!--end articles retour -->
   </div>
 </template>
 
