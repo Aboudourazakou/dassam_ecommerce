@@ -44,14 +44,24 @@
         </div>
       </div>
     </div>
-     <div class="hr">
+    <div class="hr">
       <hr class="interline mt-4" style="height:1px" />
     </div>
-  <h5
+    <h5
       class="promo"
       style="font-size: 14px;font-weight: 500;height: 35px;color: #282828; "
     >PARTAGEZ CE PRODUIT</h5>
-    <div class=""></div>
+    <div class="social d-flex">
+      <div class="social-link facebook mr-3" style="height:30px;width:30px">
+        <v-img src="/social/facebook.svg"></v-img>
+      </div>
+      <div class="social-link twitter" style="height:30px;width:30px">
+        <v-img src="/social/twitter.svg"></v-img>
+      </div>
+    </div>
+    <div class="mt-5 report">
+      <a class="link" href="#">Signaler des informations incorrectes liées au produit</a>
+    </div>
   </div>
 </template>
 
@@ -80,6 +90,10 @@ export default {
 </script>
 
 <style scoped>
+a {
+  text-decoration: none;
+}
+
 .image {
   width: 12%;
   margin-right: 1%;
@@ -102,6 +116,20 @@ export default {
 }
 .border {
   border: 1px solid #f68b1e;
+}
+.social-link {
+  cursor: pointer;
+}
+.link {
+  color: #264996;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Helvetica Neue", Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  height: 19px;
+  line-height: normal;
+  margin: 0px;
+  padding: 0px;
 }
 
 /* Hide scrollbar for IE, Edge add Firefox */
