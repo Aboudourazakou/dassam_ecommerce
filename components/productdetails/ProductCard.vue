@@ -1,5 +1,5 @@
 <template>
-  <div class="product-card pt-4" style="width:40%;">
+  <div class="product-card pt-4 pl-5" style="width:40%;">
     <!--Active image -->
     <div class="active-image">
       <v-img :src="activeImage"></v-img>
@@ -38,11 +38,11 @@
       </div>
     </div>
     <!--end avalaible image -->
-   <!--hr -->
-    <div class="hr">
+    <!--hr -->
+    <div class="hr mr-3">
       <hr class="interline mt-4" style="height:1px" />
     </div>
-  <!--end hr -->
+    <!--end hr -->
     <h5 class="promo">PARTAGEZ CE PRODUIT</h5>
     <!--Social links -->
     <div class="social d-flex">
@@ -91,8 +91,8 @@ a {
 }
 
 .active-image {
-  height: 305px;
-  width: 305px;
+  height: 280px;
+  width: 280px;
 }
 .arrow-left {
   position: absolute;
@@ -104,14 +104,14 @@ a {
 }
 .arrow-right {
   position: absolute;
-  right: 5px;
+  right: 19px;
   top: 30%;
   height: 10px;
   width: 10px;
 }
 
 .image {
-  width: 12%;
+  width: 16%;
   margin-right: 1%;
   margin-left: 1%;
 }
@@ -121,7 +121,7 @@ a {
   overflow-x: scroll;
   flex-wrap: nowrap;
   height: 45px;
-  width: 270px;
+  width: 200px;
   -ms-overflow-style: none !important;
   scrollbar-width: none; /* Firefox */
   -ms-overflow-style: none;
@@ -129,7 +129,7 @@ a {
 }
 .avalaible-images-wrapper {
   position: relative;
-  width: 305px;
+  width: 280px;
   justify-content: center;
 }
 .avalaible-images::-webkit-scrollbar {

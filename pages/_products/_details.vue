@@ -11,11 +11,13 @@
             <ProductdetailsProductCard />
             <ProductdetailsProductinfos :product="product" :promotions="promotions" />
           </div>
-          <div class="right-card ml-4 pt-2" style="width:30%;background:#ffffff;border-radius:5px">
-            <ProductdetailsRightCard />
+          <div class="right-card ml-4" style="width:30%;border-radius:5px">
+            <ProductdetailsRightCard :cities="cities" :shipments="shipments" :policies="policies" />
+            <ProductdetailsSupplierCard/>
           </div>
         </div>
       </v-container>
+       <HomeFooter/>
     </v-main>
   </v-app>
 </template>
@@ -43,6 +45,50 @@ export default {
           icon: "/icons/crown.svg",
           title:
             "Livraison gratuite à Casablanca, Rabat, Marrakech ou Tanger avec Jumia Prime, abonnez-vous maintenant"
+        }
+      ],
+      cities: [
+        {
+          id: "1",
+          name: "Grand Casablanca"
+        },
+        {
+          id: "2",
+          name: "Tetouan-Tanger-Al Hoceima-Taza"
+        },
+        {
+          id: "3",
+          name: "Rabat"
+        }
+      ],
+
+      shipments: [
+        {
+          id: 1,
+          title: "Livraison domicile",
+          price: 20,
+          icon: "/icons/car.svg",
+          infos:
+            "Vous pourrez faire le retour d'ici dix jours ,a compter de vendredi" +
+            "20 Octobre 2022.Nous vous dirons la suite  plus tard"
+        },
+        {
+          id: 2,
+          price: 10,
+          icon: "/icons/delivery.svg",
+          title: "Point relais",
+          infos:
+            "Vous pourrez faire le retour d'ici dix jours ,a compter de vendredi" +
+            "20 Octobre 2022.Nous vous dirons la suite  plus tard"
+        }
+      ],
+      policies: [
+        {
+          id: 1,
+          icon: "/icons/return-purchase.svg",
+          title: "Politique de retour",
+          infos:
+            "Vous ne pourrez ramener l'article que dans un etat  le  plus complet possible.En verite,les bonnes choses se gatent au plus vite"
         }
       ]
     };
