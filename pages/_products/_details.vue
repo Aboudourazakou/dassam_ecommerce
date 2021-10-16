@@ -4,9 +4,12 @@
     <v-main>
       <v-container class="main-wrapper d-flex justify-center mt-5">
         <div class="wrapper d-flex" style="width:1160px">
-          <div class="left-card d-flex justify-center" style="width:70%;background:#ffffff;border-radius:5px">
+          <div
+            class="left-card d-flex justify-center"
+            style="width:70%;background:#ffffff;border-radius:5px"
+          >
             <ProductdetailsProductCard />
-            <ProductdetailsProductinfos />
+            <ProductdetailsProductinfos :product="product" :promotions="promotions" />
           </div>
           <div class="right-card ml-4 pt-2" style="width:30%;background:#ffffff;border-radius:5px">
             <ProductdetailsRightCard />
@@ -20,7 +23,28 @@
 export default {
   data() {
     return {
-      rating: 4.3
+      product: {
+        name:
+          "L'Oréal Paris L'Oréal Paris Elsève Dream Long - Crème sauveuse de pointes cheveux longs huile de ricin - 200 ml",
+        rating: 4.3,
+        marque: "Durex",
+        price: "32.00",
+        discountedprice: "88.00",
+        discount: "20",
+        notations: "2000"
+      },
+      promotions: [
+        {
+          icon: "/icons/crown.svg",
+          title:
+            "Livraison gratuite à Casablanca, Rabat, Marrakech ou Tanger avec Jumia Prime, abonnez-vous maintenant"
+        },
+        {
+          icon: "/icons/crown.svg",
+          title:
+            "Livraison gratuite à Casablanca, Rabat, Marrakech ou Tanger avec Jumia Prime, abonnez-vous maintenant"
+        }
+      ]
     };
   }
 };
