@@ -1,24 +1,17 @@
 <template>
   <div class="product-card pt-4" style="width:40%;">
-    <div class="active-image" style="height:305px;width:305px">
+    <!--Active image -->
+    <div class="active-image">
       <v-img :src="activeImage"></v-img>
     </div>
-    <div
-      class="avalaible-images-wrapper d-flex"
-      style="position:relative;width:305px;justify-content:center;"
-    >
-      <div
-        v-on:click="scrollright()"
-        class="arrow-right"
-        style="position:absolute;right:5px;top:30%;height:10px;width:10px"
-      >
+    <!--end active image -->
+
+    <!--avalaible images -->
+    <div class="avalaible-images-wrapper d-flex">
+      <div v-on:click="scrollright()" class="arrow-right">
         <v-img src="/icons/arrow-right-black.svg"></v-img>
       </div>
-      <div
-        v-on:click="scrolleft()"
-        class="arrow-left"
-        style="position:absolute;left:4px;top:30%;height:8px;width:8px;z-index:10"
-      >
+      <div v-on:click="scrolleft()" class="arrow-left">
         <v-img src="/icons/arrow-left-black.svg"></v-img>
       </div>
       <div class="avalaible-images d-flex">
@@ -44,21 +37,24 @@
         </div>
       </div>
     </div>
+    <!--end avalaible image -->
+   <!--hr -->
     <div class="hr">
       <hr class="interline mt-4" style="height:1px" />
     </div>
-    <h5
-      class="promo"
-      style="font-size: 14px;font-weight: 500;height: 35px;color: #282828; "
-    >PARTAGEZ CE PRODUIT</h5>
+  <!--end hr -->
+    <h5 class="promo">PARTAGEZ CE PRODUIT</h5>
+    <!--Social links -->
     <div class="social d-flex">
-      <div class="social-link facebook mr-3" style="height:30px;width:30px">
+      <div class="social-link facebook mr-3">
         <v-img src="/social/facebook.svg"></v-img>
       </div>
-      <div class="social-link twitter" style="height:30px;width:30px">
+      <div class="social-link twitter">
         <v-img src="/social/twitter.svg"></v-img>
       </div>
     </div>
+    <!--end social links -->
+
     <div class="mt-5 report">
       <a class="link" href="#">Signaler des informations incorrectes liées au produit</a>
     </div>
@@ -94,6 +90,26 @@ a {
   text-decoration: none;
 }
 
+.active-image {
+  height: 305px;
+  width: 305px;
+}
+.arrow-left {
+  position: absolute;
+  left: 4px;
+  top: 30%;
+  height: 8px;
+  width: 8px;
+  z-index: 10;
+}
+.arrow-right {
+  position: absolute;
+  right: 5px;
+  top: 30%;
+  height: 10px;
+  width: 10px;
+}
+
 .image {
   width: 12%;
   margin-right: 1%;
@@ -111,14 +127,22 @@ a {
   -ms-overflow-style: none;
   scrollbar-width: none; /* Firefox */
 }
+.avalaible-images-wrapper {
+  position: relative;
+  width: 305px;
+  justify-content: center;
+}
 .avalaible-images::-webkit-scrollbar {
   display: none;
 }
 .border {
   border: 1px solid #f68b1e;
 }
+
 .social-link {
   cursor: pointer;
+  height: 30px;
+  width: 30px;
 }
 .link {
   color: #264996;
@@ -130,6 +154,12 @@ a {
   line-height: normal;
   margin: 0px;
   padding: 0px;
+}
+.promo {
+  font-size: 14px;
+  font-weight: 500;
+  height: 35px;
+  color: #282828;
 }
 
 /* Hide scrollbar for IE, Edge add Firefox */
