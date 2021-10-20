@@ -4,6 +4,7 @@
     <v-main>
       <v-container class="main-wrapper d-flex justify-center mt-5">
         <div class="wrapper d-flex" style="width:1160px">
+          <!--Product card wrapper and infos -->
           <div
             class="left-card d-flex justify-center"
             style="width:70%;background:#ffffff;border-radius:5px"
@@ -11,13 +12,36 @@
             <ProductdetailsProductCard />
             <ProductdetailsProductinfos :product="product" :promotions="promotions" />
           </div>
+          <!--end product card wrapper and infos -->
+
+          <!--Right card --->
           <div class="right-card ml-4" style="width:30%;border-radius:5px">
             <ProductdetailsRightCard :cities="cities" :shipments="shipments" :policies="policies" />
-            <ProductdetailsSupplierCard/>
+            <ProductdetailsSupplierCard />
           </div>
+          <!--End right card -->
         </div>
       </v-container>
-       <HomeFooter/>
+
+      <v-container class="main-wrapper d-flex justify-center mt-5">
+        <!--second wrapper -->
+        <div class="second-wrapper d-flex" style="width:1160px">
+          <!--Product details -->
+          <div
+            class="left-card d-flex justify-center"
+            style="width:70%;background:#ffffff;border-radius:5px"
+          ></div>
+
+          <ProductdetailsDescription/>
+          <!--end product details -->
+
+          <!--Right card --->
+          <div class="right-card ml-4" style="width:30%;border-radius:5px"></div>
+          <!--End right card -->
+        </div>
+        <!--end second wrapper -->
+      </v-container>
+      <HomeFooter />
     </v-main>
   </v-app>
 </template>

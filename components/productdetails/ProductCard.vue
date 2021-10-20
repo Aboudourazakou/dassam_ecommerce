@@ -155,11 +155,20 @@ a {
   margin: 0px;
   padding: 0px;
 }
+
+.product-card {
+  position: relative;
+}
 .promo {
   font-size: 14px;
   font-weight: 500;
   height: 35px;
   color: #282828;
+}
+
+.report{
+  position: absolute;
+  bottom: 15px;
 }
 
 /* Hide scrollbar for IE, Edge add Firefox */
