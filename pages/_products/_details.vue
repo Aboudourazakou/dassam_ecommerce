@@ -28,15 +28,17 @@
         <div class="second-wrapper d-flex" style="width:1160px">
           <!--Product details -->
           <div
-            class="left-card d-flex justify-center"
-            style="width:70%;background:#ffffff;border-radius:5px"
-          ></div>
-
-          <ProductdetailsDescription/>
+            class="left-card d-flex justify-center "
+            style="width:70%;border-radius:5px"
+          > <ProductdetailsDescription />
+          </div>
           <!--end product details -->
 
           <!--Right card --->
-          <div class="right-card ml-4" style="width:30%;border-radius:5px"></div>
+          <div
+            class="right-card ml-4"
+            style="width:30%;border-radius:5px;background:#ffffff"
+          >Je vais voir ce que vous pensez</div>
           <!--End right card -->
         </div>
         <!--end second wrapper -->
@@ -128,6 +130,7 @@ a {
 * {
   font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Helvetica Neue", Arial, sans-serif;
+    color: #282828;
 }
 /*c*/
 

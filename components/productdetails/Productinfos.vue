@@ -90,7 +90,7 @@
       </div>
       <!--icon -->
       <v-btn
-        class=""
+        class
         elevation="5"
         shaped
         large
@@ -172,6 +172,7 @@ a {
   line-height: 16.8px;
   margin: 8px 0px 0px;
   padding: 0px 4px;
+  color: #ffffff;
 }
 
 .heart {
