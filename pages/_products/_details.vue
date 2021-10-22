@@ -25,19 +25,17 @@
 
       <v-container class="main-wrapper d-flex justify-center mt-5">
         <!--second wrapper -->
-        <div class="second-wrapper d-flex" style="width:1160px">
+        <div class="second-wrapper d-flex" style="width:1160px;">
           <!--Product details -->
-          <div
-            class="left-card d-flex justify-center "
-            style="width:70%;border-radius:5px"
-          > <ProductdetailsDescription />
+          <div class="left-card d-flex justify-center" style="width:70%;border-radius:5px">
+            <ProductdetailsDescription />
           </div>
           <!--end product details -->
 
           <!--Right card --->
           <div
             class="right-card ml-4"
-            style="width:30%;border-radius:5px;background:#ffffff"
+            style="width:30%;border-radius:5px;background:red;position:sticky;height:20px"
           >Je vais voir ce que vous pensez</div>
           <!--End right card -->
         </div>
@@ -130,9 +128,8 @@ a {
 * {
   font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Helvetica Neue", Arial, sans-serif;
-    color: #282828;
+  color: #282828;
 }
-/*c*/
 
 .v-application {
   background-color: #f5f5f5;

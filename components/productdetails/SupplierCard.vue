@@ -89,7 +89,7 @@
             class="mt-0"
           >Cliquer ici pour le vendre</p>
         </div>
-         <div class="img" style="height:12px;width:12px;cursor:pointer">
+        <div class="img" style="height:12px;width:12px;cursor:pointer">
           <v-img src="/icons/arrow-right-black.svg"></v-img>
         </div>
       </div>
@@ -101,6 +101,11 @@
 * {
   font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Helvetica Neue", Arial, sans-serif;
+}
+
+.interline {
+  border: 1px solid #c7c7cd;
+  border-bottom: none;
 }
 .svg :hover path {
   fill: #e4811c;

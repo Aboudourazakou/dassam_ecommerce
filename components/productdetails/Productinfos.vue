@@ -192,6 +192,11 @@ a {
   width: 20px;
 }
 
+.interline {
+  border: 1px solid #c7c7cd;
+  border-bottom: none;
+}
+
 .link {
   color: #264996;
   font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",

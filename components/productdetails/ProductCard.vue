@@ -139,6 +139,11 @@ a {
   border: 1px solid #f68b1e;
 }
 
+.interline {
+  border: 1px solid #c7c7cd;
+  border-bottom: none;
+}
+
 .social-link {
   cursor: pointer;
   height: 30px;
@@ -166,7 +171,7 @@ a {
   color: #282828;
 }
 
-.report{
+.report {
   position: absolute;
   bottom: 15px;
 }

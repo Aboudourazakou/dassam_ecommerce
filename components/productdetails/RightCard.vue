@@ -1,5 +1,5 @@
 <template>
-  <div class="pt-3 " style="background:#ffffff;">
+  <div class="pt-3" style="background:#ffffff;">
     <h2
       class="ml-3"
       style="font-size: 14px;font-weight: 500;height:25px;color: #282828; "
@@ -207,9 +207,14 @@ a {
 .icon-wrapper {
   height: 40px;
   width: 40px;
-  border: 1px solid black;
+  border: 1px solid #c7c7cd;
+  border-radius: 5px;
   justify-content: center;
   align-items: center;
+}
+.interline {
+  border: 1px solid #c7c7cd;
+  border-bottom: none;
 }
 select:focus {
   border: 1px solid #f68b1e !important;
@@ -221,7 +226,7 @@ select {
   font-weight: 400;
   height: 40px;
   line-height: 19.6px;
-  border: 1px solid black !important;
+  border: 1px solid #c7c7cd!important;
   border-radius: 5px;
 }
 .shipment-extra-infos-content {
