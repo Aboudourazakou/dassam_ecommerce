@@ -1,7 +1,7 @@
 <template>
   <div style="width:100%;">
     <!--Details content -->
-    <div class="details pt-3" style="border-radius:5px">
+    <div class="details pt-3" style="border-radius:5px" id="details">
       <h5 class="pl-3 details-title">Details</h5>
       <div class="hr">
         <hr class="interline mt-4" style="height:1px" />
@@ -25,7 +25,7 @@
     <!-- end Details content -->
 
     <!--technical Details content -->
-    <div class="technical-details mt-5 pt-3 pb-5" style="border-radius:5px">
+    <div class="details technical-details mt-5 pt-3 pb-5" style="border-radius:5px">
       <h5 class="pl-3 details-title">Fiche technique</h5>
       <div class="hr">
         <hr class="interline mt-4" style="height:1px" />
@@ -113,9 +113,15 @@
 </template>
 
 <script>
+import $ from "jquery";
 export default {
   data() {
     return {};
+  },
+  created() {
+    if (process.browser) {
+    
+    }
   }
 };
 </script>

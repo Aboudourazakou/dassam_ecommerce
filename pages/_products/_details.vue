@@ -25,7 +25,7 @@
 
       <v-container class="main-wrapper d-flex justify-center mt-5">
         <!--second wrapper -->
-        <div class="second-wrapper d-flex" style="width:1160px;">
+        <div class="second-wrapper d-flex" style="width:1160px">
           <!--Product details -->
           <div class="left-card d-flex justify-center" style="width:70%;border-radius:5px">
             <ProductdetailsDescription />
@@ -33,10 +33,23 @@
           <!--end product details -->
 
           <!--Right card --->
-          <div
-            class="right-card ml-4"
-            style="width:30%;border-radius:5px;background:red;position:sticky;height:20px"
-          >Je vais voir ce que vous pensez</div>
+          <div class="right-card ml-4" style="width:30%;border-radius:5px;position:sticky;top:80px">
+            <div class="ancre-wrapper" style="background:#ffffff;border-radius:5px">
+              <div
+                v-for="element in ancres"
+                :key="element"
+                class="ancre d-flex pl-3 pr-3"
+                style="height:48px;align-items:center;cursor:pointer"
+              >
+                <div class="ancre-icon mr-5" style="height:16px;width:16px">
+                  <v-img :src="'/icons/'+element.icon"></v-img>
+                </div>
+                <div style="font-size: 14px;font-weight: 500;">
+                  <a href style="color: #282828; ">{{element.title}}</a>
+                </div>
+              </div>
+            </div>
+          </div>
           <!--End right card -->
         </div>
         <!--end second wrapper -->
@@ -114,6 +127,20 @@ export default {
           infos:
             "Vous ne pourrez ramener l'article que dans un etat  le  plus complet possible.En verite,les bonnes choses se gatent au plus vite"
         }
+      ],
+      ancres: [
+        {
+          title: "Details",
+          icon: "details.svg"
+        },
+        {
+          title: "Fiche technique",
+          icon: "technique.svg"
+        },
+        {
+          title: "Avis des utilisateurs",
+          icon: "comment.svg"
+        }
       ]
     };
   }
@@ -124,6 +151,12 @@ export default {
 /*a*/
 a {
   text-decoration: none;
+}
+
+.ancre:nth-child(2) {
+  border-top: 1px solid #ededed;
+  border-bottom: 1px solid #ededed;
+  background-color: #ededed;
 }
 * {
   font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",
