@@ -56,10 +56,11 @@
       <!--end title-->
        <v-container class="products-container  scroll-right white d-flex align-items-space-around pr-0 pl-3 pb-4 pr-0 mt-0 pt-0" style="height:270px;width:1160px;position:relative">
 
-         <div class="product-wrapper mr-0 ml-0 pr-0 pl-0 pt-0 mb-0 pb-0" style="display:flex;flex-wrap:wrap;position:relative" v-for="product in products"  @mouseover="displayArrows()" @mouseleave="disableArrows()">
+         <div class="product-wrapper mr-0 ml-0 pr-0 pl-0 pt-0 mb-0 pb-0" style="display:flex;flex-wrap:wrap;position:relative" v-for="product in products"  @mouseover="displayArrows()" @mouseleave="disableArrows()" @click="viewProduct(product.name)" >
 
 
             <v-card
+
                 rounded
 
                 flat
@@ -86,6 +87,7 @@
 
          </div>
 
+
        </v-container>
       </v-container>
       </v-container>
@@ -108,6 +110,10 @@ export default {
   },
 
   methods: {
+    viewProduct(name) {
+      
+   this.$router.push(name.trim().replace(/ /g, "-").toLowerCase())
+    },
     disableArrows() {
       document.getElementById("right-arrow").style.display = "none";
       document.getElementById("left-arrow").style.display = "none";

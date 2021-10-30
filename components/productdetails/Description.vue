@@ -7,19 +7,9 @@
         <hr class="interline mt-4" style="height:1px" />
       </div>
       <div class="details-content pl-5 pr-5">
-        <p>Je vais vous raconter cette histoire.Je vais</p>
-
-        <p>voir ce que vous en pensez ,puis on va terminer le job ensemble</p>
-        <p>voir ce que vous en pensez ,puis on va terminer le job ensemble</p>
-        <p>voir ce que vous en pensez ,puis on va terminer le job ensemble</p>
-
-        <p>
-          <img
-            alt
-            src="https://ckeditor.com/apps/ckfinder/userfiles/files/0_dtbGisnIfG0utbdi.png"
-            style="border-style:solid; border-width:3px; height:142px; margin:4px 23px; width:200px"
-          />
-        </p>
+      <p>J'arrive pour vous l'annoncer</p>
+<p>&nbsp;</p>
+<p><iframe title="YouTube video player" src="https://www.youtube.com/embed/8ov1xwQuayA" width="533" height="300" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
       </div>
     </div>
     <!-- end Details content -->
@@ -120,7 +110,7 @@ export default {
   },
   created() {
     if (process.browser) {
-    
+
     }
   }
 };
