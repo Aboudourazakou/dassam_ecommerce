@@ -42,7 +42,7 @@
           >
             <div class="ancre-wrapper" style="background:#ffffff;border-radius:5px">
               <a
-                :class="{active :active==element.id}"
+                :class="{active:active==element.id}"
                 v-for="element in ancres"
                 :key="element"
                 class="ancre d-flex pl-3 pr-3"
@@ -53,7 +53,7 @@
                   <v-img :src="'/icons/'+element.icon"></v-img>
                 </div>
                 <div style="font-size: 14px;font-weight: 500;">
-                  <span  style="color: #282828; ">{{element.title}}</span>
+                  <span style="color: #282828; ">{{element.title}}</span>
                 </div>
               </a>
             </div>
@@ -159,24 +159,35 @@ export default {
     };
   },
   methods: {
-    removeDiez() {}
+    removeDiez() {
+      console.log("Coucou");
+    }
   },
   mounted() {
     if (process.browser) {
-      $(window).bind("scroll", function() {
-        var currentTop = $(window).scrollTop();
-        var elems = $(".scrollspy");
-        elems.each(function(index) {
-          var elemTop = $(this).offset().top;
-          var elemBottom = elemTop + $(this).height();
-          if (currentTop >= elemTop && currentTop <= elemBottom) {
-            var id = $(this).attr("id");
-            var navElem = $('a[href="#' + id + '"]');
+      var change = false;
+      var active = "";
+      window.addEventListener("scroll", function() {
+        var currentTop = window.pageYOffset;
+        var elems = document.querySelectorAll(".scrollspy");
 
-              navElem.parent().addClass('active').siblings().removeClass( 'active' );
+        elems.forEach(function(element) {
+          var elemTop = element.offsetTop;
+          var elemBottom = elemTop + element.offsetHeight;
+          console.log(elemBottom);
+          if (currentTop >= elemTop && currentTop <= elemBottom) {
+            var id = element.getAttribute("id");
+            var navElem = document.querySelector('a[href="#' + id + '"]');
+            console.log(id);
           }
         });
       });
+
+      function scrollspy(id) {
+        active = id;
+      }
+
+      console.log(active);
     }
   }
 };
