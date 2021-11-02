@@ -97,10 +97,14 @@
     <!-- end suggestion to become supplier -->
   </div>
 </template>
-<style scoped>
+<style >
 * {
   font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI",
     "Helvetica Neue", Arial, sans-serif;
+}
+
+html{
+   scroll-behavior: smooth!important;
 }
 
 .interline {

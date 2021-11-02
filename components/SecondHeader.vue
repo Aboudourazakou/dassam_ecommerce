@@ -160,6 +160,10 @@ export default {
 
 
 <style scoped>
+
+html{
+   scroll-behavior: smooth!important;
+}
 /*a*/
 a {
   list-style: none;

@@ -1,21 +1,34 @@
 <template>
   <div style="width:100%;">
     <!--Details content -->
-    <div class="details pt-3" style="border-radius:5px" id="details">
+    <div class="details scrollspy pt-3" style="border-radius:5px" id="details">
       <h5 class="pl-3 details-title">Details</h5>
       <div class="hr">
         <hr class="interline mt-4" style="height:1px" />
       </div>
       <div class="details-content pl-5 pr-5">
-      <p>J'arrive pour vous l'annoncer</p>
-<p>&nbsp;</p>
-<p><iframe title="YouTube video player" src="https://www.youtube.com/embed/8ov1xwQuayA" width="533" height="300" frameborder="0" allowfullscreen="allowfullscreen"></iframe></p>
+        <p>J'arrive pour vous l'annoncer</p>
+        <p>&nbsp;</p>
+        <p>
+          <iframe
+            title="YouTube video player"
+            src="https://www.youtube.com/embed/8ov1xwQuayA"
+            width="533"
+            height="300"
+            frameborder="0"
+            allowfullscreen="allowfullscreen"
+          ></iframe>
+        </p>
       </div>
     </div>
     <!-- end Details content -->
 
     <!--technical Details content -->
-    <div class="details technical-details mt-5 pt-3 pb-5" style="border-radius:5px">
+    <div
+      id="techniques"
+      class="scrollspy technical-details mt-5 pt-3 pb-5"
+      style="border-radius:5px;background:#ffffff"
+    >
       <h5 class="pl-3 details-title">Fiche technique</h5>
       <div class="hr">
         <hr class="interline mt-4" style="height:1px" />
@@ -110,7 +123,6 @@ export default {
   },
   created() {
     if (process.browser) {
-
     }
   }
 };

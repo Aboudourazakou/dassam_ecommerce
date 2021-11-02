@@ -25,29 +25,37 @@
 
       <v-container class="main-wrapper d-flex justify-center mt-5">
         <!--second wrapper -->
-        <div class="second-wrapper d-flex" style="width:1160px">
+        <div class="second-wrapper d-flex" style="width:1160px;">
           <!--Product details -->
-          <div class="left-card d-flex justify-center" style="width:70%;border-radius:5px">
+          <div
+            class="left-card d-flex justify-center"
+            style="width:70%;border-radius:5px;position:relative"
+          >
             <ProductdetailsDescription />
           </div>
           <!--end product details -->
 
           <!--Right card --->
-          <div class="right-card ml-4" style="width:30%;border-radius:5px;position:sticky;top:80px">
+          <div
+            class="right-card ml-4"
+            style="width:30%;border-radius:5px;position:sticky!important;top:20px;;height:150px"
+          >
             <div class="ancre-wrapper" style="background:#ffffff;border-radius:5px">
-              <div
+              <a
+                :class="{active :active==element.id}"
                 v-for="element in ancres"
                 :key="element"
                 class="ancre d-flex pl-3 pr-3"
-                style="height:48px;align-items:center;cursor:pointer"
+                style="height:48px;align-items:center;z-index:10"
+                :href="'#'+element.id"
               >
                 <div class="ancre-icon mr-5" style="height:16px;width:16px">
                   <v-img :src="'/icons/'+element.icon"></v-img>
                 </div>
                 <div style="font-size: 14px;font-weight: 500;">
-                  <a href style="color: #282828; ">{{element.title}}</a>
+                  <span  style="color: #282828; ">{{element.title}}</span>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
           <!--End right card -->
@@ -55,13 +63,16 @@
         <!--end second wrapper -->
       </v-container>
       <HomeFooter />
+      <HomeFooter />
     </v-main>
   </v-app>
 </template>
 <script>
+import $ from "jquery";
 export default {
   data() {
     return {
+      active: "details",
       product: {
         name:
           "L'Oréal Paris L'Oréal Paris Elsève Dream Long - Crème sauveuse de pointes cheveux longs huile de ricin - 200 ml",
@@ -130,19 +141,43 @@ export default {
       ],
       ancres: [
         {
+          id: "details",
           title: "Details",
           icon: "details.svg"
         },
         {
+          id: "techniques",
           title: "Fiche technique",
           icon: "technique.svg"
         },
         {
+          id: "comments",
           title: "Avis des utilisateurs",
           icon: "comment.svg"
         }
       ]
     };
+  },
+  methods: {
+    removeDiez() {}
+  },
+  mounted() {
+    if (process.browser) {
+      $(window).bind("scroll", function() {
+        var currentTop = $(window).scrollTop();
+        var elems = $(".scrollspy");
+        elems.each(function(index) {
+          var elemTop = $(this).offset().top;
+          var elemBottom = elemTop + $(this).height();
+          if (currentTop >= elemTop && currentTop <= elemBottom) {
+            var id = $(this).attr("id");
+            var navElem = $('a[href="#' + id + '"]');
+
+              navElem.parent().addClass('active').siblings().removeClass( 'active' );
+          }
+        });
+      });
+    }
   }
 };
 </script>
@@ -153,7 +188,7 @@ a {
   text-decoration: none;
 }
 
-.ancre:nth-child(2) {
+.active {
   border-top: 1px solid #ededed;
   border-bottom: 1px solid #ededed;
   background-color: #ededed;
@@ -168,3 +203,5 @@ a {
   background-color: #f5f5f5;
 }
 </style>
+
+
